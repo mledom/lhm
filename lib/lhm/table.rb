@@ -84,6 +84,7 @@ module Lhm
         indices.
           map do |row|
             key_name = struct_key(row, "Key_name")
+            key_name = "#{ @table_name }_#{ key_name }"
             column_name = struct_key(row, "COLUMN_NAME")
             [row[key_name], row[column_name]]
           end.
